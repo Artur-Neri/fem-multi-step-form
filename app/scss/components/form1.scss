@@ -1,0 +1,58 @@
+@use '../util' as *;
+
+#personalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  @include breakpoint(medium) {
+    gap: rem(24);
+  }
+}
+
+.form {
+  &__controls {
+    margin-top:  calc(rem(92) - rem(24));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: rem(14);
+    font-weight: 600;
+    @include breakpoint(medium) {
+      font-size: rem(16);
+    }
+
+    @include breakpoint-down(medium) {
+      width: calc(100vw - 32px);
+      margin-inline: auto;
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      padding: 16px 0;
+    }
+  }
+
+  &__back {
+    color: var(--text1);
+    cursor: pointer;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  &__submit {
+    cursor: pointer;
+    width: fit-content;
+    border: none;
+    border-radius: rem(4);
+    background-color: var(--accent);
+    color: white ;
+    font-size: rem(14);
+    font-weight: 600;
+    padding: rem(12) rem(16);
+    @include breakpoint(medium) {
+      border-radius: rem(8);
+      padding: rem(16) rem(24);
+    }
+  }
+}

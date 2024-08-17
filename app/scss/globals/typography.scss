@@ -1,0 +1,20 @@
+@use '../util' as *;
+
+h1,h2,h3 {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 0.8rem + 3.02vw, 2rem);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Ubuntu",sans-serif;
+}

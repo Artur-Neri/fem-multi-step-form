@@ -1,0 +1,11 @@
+@use '../util' as *;
+
+.bg-mobile {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}

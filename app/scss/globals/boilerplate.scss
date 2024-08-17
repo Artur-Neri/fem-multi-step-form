@@ -1,0 +1,67 @@
+@use '../util' as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  @include breakpoint(medium) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+}
+
+.container {
+  max-width: rem(960);
+  margin-inline: auto;
+  @include breakpoint(medium) {
+      display: flex;
+      background-color: white;
+      padding-left: 16px;
+      padding-top: 16px;
+      border-radius: rem(15);
+      box-shadow: 0 25px 40px -20px hsla(0, 0%, 0%, 9.51%);
+    }
+}
+
+.sidebar {
+  min-width: rem(274);
+  @include breakpoint(medium) {
+    border-radius: rem(10);
+    background: url('/assets/images/bg-sidebar-desktop.svg') no-repeat;
+  }
+}
+
+.main {
+  background-color: white;
+  max-width: calc(100% - rem(32));
+  margin-inline: auto;
+  border-radius: rem(10);
+  padding: rem(32) rem(24);
+  box-shadow: 0 25px 40px -20px hsla(0, 0%, 0%, 9.51%);
+  @include breakpoint(medium) {
+    margin: 0;
+    flex: 1;
+    background-color: transparent;
+    box-shadow: 0 25px 40px -20px hsla(0, 0%, 0%, 0);
+    padding: rem(32) rem(20);
+  }
+}
+
+@media (min-width:940px) {
+  .main {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+

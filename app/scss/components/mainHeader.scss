@@ -1,0 +1,20 @@
+@use '../util' as *;
+
+.main__header {
+    margin-bottom: rem(22);
+  @include breakpoint(medium) {
+    margin-bottom: rem(35);
+  }
+
+  h2 {
+    margin-bottom: 9px;
+    @include breakpoint(medium) {
+      margin-bottom: 11px;
+    }
+  }
+
+  p {
+     line-height: rem(25);
+     color: var(--text1);
+  }
+}
